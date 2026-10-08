@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- ============ PRIMARY SEO ============ -->
+<title>Richman Osasuyi — AI-Native Full-Stack Builder | RagNote, Tonstores</title>
+<meta name="description" content="AI-native full-stack builder shipping production software with terminal-based agents. Built RagNote (RAG study assistant), PDF worker, Tonstores, and Bitcoin analytics. React, Python, Supabase, Docker." />
+<meta name="author" content="Richman Osasuyi" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+<meta name="theme-color" content="#0a0b0f" />
+<link rel="canonical" href="https://richmandev.vercel.app/" />
+
+<!-- ============ FAVICON STACK ============ -->
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="alternate" type="application/pdf" href="/Richman_Osasuyi_Resume.pdf" title="Richman Osasuyi — Resume (PDF)" />
+<link rel="manifest" href="/site.webmanifest" />
+
+<!-- ============ OPEN GRAPH ============ -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://richmandev.vercel.app/" />
+<meta property="og:title" content="Richman Osasuyi — AI-Native Full-Stack Builder" />
+<meta property="og:description" content="Production RAG systems, document pipelines, and e-commerce platforms built with terminal-based AI agents. React, Python, Supabase, Docker." />
+<meta property="og:image" content="https://richmandev.vercel.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Richman Osasuyi — portfolio preview showing projects RagNote, Tonstores, PDF Worker" />
+<meta property="og:site_name" content="Richman Osasuyi" />
+<meta property="og:locale" content="en_NG" />
+
+<!-- ============ TWITTER / X CARD ============ -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Richman Osasuyi — AI-Native Full-Stack Builder" />
+<meta name="twitter:description" content="Production RAG systems, document pipelines, and e-commerce platforms built with terminal-based AI agents." />
+<meta name="twitter:image" content="https://richmandev.vercel.app/og-image.png" />
+<meta name="twitter:image:alt" content="Richman Osasuyi portfolio preview" />
+<meta name="twitter:creator" content="@DtonGamer" />
+
+<!-- ============ JSON-LD ============ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Richman Osasuyi",
+  "url": "https://richmandev.vercel.app/",
+  "jobTitle": "AI-Native Full-Stack Builder",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Benin City",
+    "addressCountry": "NG"
+  },
+  "email": "wally.aiofm@gmail.com",
+  "sameAs": [
+    "https://github.com/DtonGamer",
+    "https://ragnote.vercel.app",
+    "https://tonstores.vercel.app"
+  ],
+  "knowsAbout": [
+    "React", "TypeScript", "Python", "Supabase", "Docker",
+    "RAG systems", "AI agentic coding", "Bitcoin RPC", "PostgreSQL"
+  ]
+}
+</script>
+
+<!-- ============ FONTS ============ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #0a0b0f;
+    --bg-soft: #12141c;
+    --bg-card: #161822;
+    --border: #22252f;
+    --text: #e6e8ee;
+    --muted: #8b90a0;
+    --accent: #5eead4;
+    --accent-dim: #2dd4bf;
+    --accent-glow: rgba(94, 234, 212, 0.15);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(94, 234, 212, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(94, 234, 212, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+    mask-image: radial-gradient(ellipse at top, black 30%, transparent 80%);
+    -webkit-mask-image: radial-gradient(ellipse at top, black 30%, transparent 80%);
+  }
+
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ---- NAV ---- */
+  nav {
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: rgba(10, 11, 15, 0.75);
+    border-bottom: 1px solid var(--border);
+    z-index: 100;
+  }
+  nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 24px;
+  }
+  .brand {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    color: var(--accent);
+    font-weight: 500;
+  }
+  .brand::before { content: '> '; opacity: 0.5; }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 22px;
+  }
+  nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 13.5px;
+    font-weight: 500;
+    transition: color 0.15s;
+  }
+  nav a:hover { color: var(--accent); }
+  @media (max-width: 640px) {
+    nav ul { gap: 14px; }
+    nav a { font-size: 12.5px; }
+    .brand { font-size: 12px; }
+  }
+
+  /* ---- HERO ---- */
+  .hero { padding: 90px 0 70px; }
+  .status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--accent);
+    background: var(--accent-glow);
+    border: 1px solid rgba(94, 234, 212, 0.25);
+    padding: 5px 12px;
+    border-radius: 999px;
+    margin-bottom: 24px;
+  }
+  .status::before {
+    content: '';
+    width: 7px; height: 7px;
+    background: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--accent);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+  h1 {
+    font-size: clamp(32px, 6vw, 52px);
+    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+  }
+  h1 .grad {
+    background: linear-gradient(135deg, var(--accent) 0%, #a78bfa 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .role {
+    font-size: clamp(16px, 2.5vw, 19px);
+    color: var(--muted);
+    max-width: 620px;
+    margin-bottom: 28px;
+  }
+  .role strong { color: var(--text); font-weight: 500; }
+
+  .cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.15s;
+    border: 1px solid var(--border);
+    color: var(--text);
+    background: var(--bg-soft);
+  }
+  .btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-1px);
+  }
+  .btn.primary {
+    background: var(--accent);
+    color: #061a17;
+    border-color: var(--accent);
+    font-weight: 600;
+  }
+  .btn.primary:hover {
+    background: var(--accent-dim);
+    color: #061a17;
+    box-shadow: 0 0 20px var(--accent-glow);
+  }
+  .btn svg { width: 16px; height: 16px; }
+
+  .meta-line {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12.5px;
+    color: var(--muted);
+    margin-top: 20px;
+  }
+  .meta-line a { color: var(--muted); text-decoration: none; border-bottom: 1px dotted var(--border); }
+  .meta-line a:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* ---- SECTIONS ---- */
+  section {
+    padding: 60px 0;
+    border-top: 1px solid var(--border);
+  }
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 10px;
+  }
+  h2 {
+    font-size: clamp(22px, 3.5vw, 28px);
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    margin-bottom: 8px;
+  }
+  .section-desc {
+    color: var(--muted);
+    margin-bottom: 36px;
+    max-width: 620px;
+    font-size: 15px;
+  }
+
+  /* ---- PROJECTS ---- */
+  .projects { display: grid; gap: 16px; }
+  .project {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .project::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), transparent);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .project:hover {
+    border-color: rgba(94, 234, 212, 0.35);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  }
+  .project:hover::before { opacity: 1; }
+
+  .project-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+  }
+  .project h3 {
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .project-links {
+    display: flex;
+    gap: 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+  .project-links a {
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .project-links a:hover { color: var(--accent); }
+
+  .stack {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+  .stack span {
+    display: inline-block;
+    padding: 2px 8px;
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    margin-right: 6px;
+    margin-bottom: 4px;
+  }
+
+  .project ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 8px;
+  }
+  .project li {
+    padding-left: 20px;
+    position: relative;
+    font-size: 14px;
+    color: #c5c9d6;
+    line-height: 1.55;
+  }
+  .project li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 12px;
+    top: 2px;
+  }
+
+  .badge {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    padding: 2px 7px;
+    border-radius: 4px;
+    background: rgba(167, 139, 250, 0.12);
+    color: #a78bfa;
+    border: 1px solid rgba(167, 139, 250, 0.25);
+    margin-left: 8px;
+    vertical-align: middle;
+    font-weight: 500;
+  }
+
+  /* ---- SKILLS ---- */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+  }
+  .skill-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+  }
+  .skill-card h4 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+  .skill-card p {
+    font-size: 14px;
+    color: #c5c9d6;
+    line-height: 1.6;
+  }
+  .skill-card .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .chip {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11.5px;
+    padding: 4px 9px;
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    color: #c5c9d6;
+  }
+
+  /* ---- CONTACT ---- */
+  .contact-box {
+    background: linear-gradient(135deg, var(--bg-card), var(--bg-soft));
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .contact-box::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: 50%;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+    transform: translateX(-50%);
+    pointer-events: none;
+  }
+  .contact-box > * { position: relative; }
+  .contact-box h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    letter-spacing: -0.015em;
+  }
+  .contact-box p {
+    color: var(--muted);
+    margin-bottom: 24px;
+    font-size: 15px;
+  }
+  .contact-box .cta-row { justify-content: center; }
+
+  footer {
+    padding: 40px 0 60px;
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+  }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+
+  /* ---- REVEAL ---- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <div class="brand">richman@dev</div>
+    <ul>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#stack">Stack</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div class="status">Available immediately</div>
+    <h1>Building production software<br><span class="grad">with AI agents.</span></h1>
+    <p class="role">
+      I'm <strong>Richman Osasuyi</strong> — an AI-native full-stack builder who ships real products
+      using terminal-based agentic coding (OpenCode + GLM, Qwen Code, Claude Code) and Cursor.
+      From production RAG systems to Bitcoin blockchain analytics.
+    </p>
+
+    <div class="cta-row">
+      <a class="btn primary" href="/Richman_Osasuyi_Resume.pdf" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+        Resume
+      </a>
+      <a class="btn" href="https://github.com/DtonGamer" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        GitHub
+      </a>
+      <a class="btn" href="mailto:wally.aiofm@gmail.com">Get in touch</a>
+      <a class="btn" href="https://ragnote.vercel.app" target="_blank" rel="noopener">RagNote →</a>
+      <a class="btn" href="https://tonstores.vercel.app" target="_blank" rel="noopener">Tonstores →</a>
+    </div>
+
+    <p class="meta-line">
+      Benin City, Nigeria · <a href="mailto:wally.aiofm@gmail.com">wally.aiofm@gmail.com</a>
+    </p>
+  </div>
+</header>
+
+<section id="work">
+  <div class="container">
+    <div class="section-label reveal">01 — Selected work</div>
+    <h2 class="reveal">Production projects</h2>
+    <p class="section-desc reveal">Live systems in production. Not demos, not tutorials.</p>
+
+    <div class="projects">
+
+      <article class="project reveal">
+        <div class="project-head">
+          <h3>RagNote — AI Study Assistant <span class="badge">LIVE</span></h3>
+          <div class="project-links">
+            <a href="https://ragnote.vercel.app" target="_blank" rel="noopener">Live ↗</a>
+            <a href="https://github.com/DtonGamer/Ragbook" target="_blank" rel="noopener">Code ↗</a>
+          </div>
+        </div>
+        <div class="stack">
+          <span>React</span><span>TypeScript</span><span>Python</span><span>Supabase</span><span>pgvector</span>
+        </div>
+        <ul>
+          <li>Architected production RAG system with asynchronous Python workers, OCR pipelines (OCRmyPDF), and pgvector semantic search.</li>
+          <li>Implemented credit-based monetization with Paystack, Supabase Edge Functions, and Redis job queues.</li>
+          <li>Tech: HuggingFace BGE embeddings, Docker, Supabase Realtime, Tailwind CSS.</li>
+        </ul>
+      </article>
+
+      <article class="project reveal">
+        <div class="project-head">
+          <h3>PDF Processing Worker — Document Pipeline</h3>
+          <div class="project-links">
+            <a href="https://github.com/DtonGamer/pdf_worker" target="_blank" rel="noopener">Code ↗</a>
+          </div>
+        </div>
+        <div class="stack">
+          <span>Python 3.11</span><span>Tesseract OCR</span><span>Redis</span><span>Docker</span><span>sentence-transformers</span>
+        </div>
+        <ul>
+          <li>Developed memory-efficient worker (400–650MB footprint) for PDF/image OCR, chunking, and embedding generation.</li>
+          <li>Implemented priority queue system (high/normal/low) with exponential backoff retry logic.</li>
+          <li>Built HTTP health endpoints and metrics monitoring for deployment on free-tier platforms (Railway, Render, Zeabur).</li>
+        </ul>
+      </article>
+
+      <article class="project reveal">
+        <div class="project-head">
+          <h3>Tonstores Catalog Hub — E-Commerce <span class="badge">LIVE</span></h3>
+          <div class="project-links">
+            <a href="https://tonstores.vercel.app" target="_blank" rel="noopener">Live ↗</a>
+            <a href="https://github.com/DtonGamer/Tonstores" target="_blank" rel="noopener">Code ↗</a>
+          </div>
+        </div>
+        <div class="stack">
+          <span>React</span><span>TypeScript</span><span>Supabase</span><span>Paystack</span><span>RLS</span>
+        </div>
+        <ul>
+          <li>Full-stack catalog management with guest checkout, KYC onboarding, and Paystack subaccount automation.</li>
+          <li>Migrated payment providers (Monnify → Paystack) across 12+ Supabase Edge Functions using AI-assisted refactoring.</li>
+          <li>Admin role system with Row Level Security (RLS) policies and social media sales tracking.</li>
+        </ul>
+      </article>
+
+      <article class="project reveal">
+        <div class="project-head">
+          <h3>DMT Pattern Hunter — Bitcoin Analytics</h3>
+          <div class="project-links">
+            <a href="https://github.com/DtonGamer/DMT-Pattern-Hunter" target="_blank" rel="noopener">Code ↗</a>
+          </div>
+        </div>
+        <div class="stack">
+          <span>Node.js</span><span>Bitcoin Core RPC</span><span>TAP Protocol</span><span>PM2</span><span>Trac Network</span>
+        </div>
+        <ul>
+          <li>Developed Bitcoin block scanner analyzing 38 on-chain data fields for pattern discovery and NAT token deployment.</li>
+          <li>Built terminal UI in Node.js; integrated blockchain.info API with Bitcoin Core RPC fallback and a PM2-managed Discord bot.</li>
+          <li>Implemented reputation system, rate limiting, and TAP Protocol inscription generation.</li>
+        </ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="stack">
+  <div class="container">
+    <div class="section-label reveal">02 — Capabilities</div>
+    <h2 class="reveal">Stack & workflow</h2>
+    <p class="section-desc reveal">How I build: agents first, models chosen by task, one chat per task.</p>
+
+    <div class="skills-grid">
+
+      <div class="skill-card reveal">
+        <h4>AI-Native Development</h4>
+        <div class="chips">
+          <span class="chip">OpenCode</span>
+          <span class="chip">Qwen Code</span>
+          <span class="chip">Claude Code</span>
+          <span class="chip">Cursor</span>
+          <span class="chip">GLM models</span>
+          <span class="chip">Prompt engineering</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal">
+        <h4>Frontend</h4>
+        <div class="chips">
+          <span class="chip">React 18</span>
+          <span class="chip">TypeScript</span>
+          <span class="chip">Vite</span>
+          <span class="chip">Tailwind CSS</span>
+          <span class="chip">shadcn/ui</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal">
+        <h4>Backend</h4>
+        <div class="chips">
+          <span class="chip">Supabase</span>
+          <span class="chip">PostgreSQL</span>
+          <span class="chip">pgvector</span>
+          <span class="chip">Edge Functions</span>
+          <span class="chip">Python</span>
+          <span class="chip">Node.js</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal">
+        <h4>Infrastructure</h4>
+        <div class="chips">
+          <span class="chip">Docker</span>
+          <span class="chip">Redis</span>
+          <span class="chip">PM2</span>
+          <span class="chip">Supabase CLI</span>
+          <span class="chip">Vercel</span>
+          <span class="chip">Railway / Render</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal">
+        <h4>Blockchain</h4>
+        <div class="chips">
+          <span class="chip">Bitcoin Core RPC</span>
+          <span class="chip">TAP Protocol</span>
+          <span class="chip">Trac Network</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal">
+        <h4>Workflow</h4>
+        <p>Terminal-based agentic coding with model switching — GLM/Qwen for fast implementation, Claude for architecture. One chat per task. Direct Supabase CLI over SQL Editor to optimize agent loops.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-label reveal">03 — Contact</div>
+    <h2 class="reveal">Let's build something.</h2>
+    <p class="section-desc reveal">Open to AI training, contract engineering, and product collaborations.</p>
+
+    <div class="contact-box reveal">
+      <h3>Available immediately</h3>
+      <p>Flexible schedule · Benin City, Nigeria (UTC+1)</p>
+      <div class="cta-row">
+        <a class="btn primary" href="mailto:wally.aiofm@gmail.com">wally.aiofm@gmail.com</a>
+        <a class="btn" href="https://github.com/DtonGamer" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="/Richman_Osasuyi_Resume.pdf" download>Download Resume ↓</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© <span id="year"></span> Richman Osasuyi · Built with terminal agents, not templates.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

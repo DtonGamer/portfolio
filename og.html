@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  body {
+    margin: 0; width: 1200px; height: 630px;
+    background: #0a0b0f; color: #e6e8ee;
+    font-family: 'Inter', system-ui, sans-serif;
+    display: flex; flex-direction: column;
+    justify-content: center; padding: 80px;
+    box-sizing: border-box; overflow: hidden;
+    position: relative;
+  }
+  body::before {
+    content: ''; position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(94,234,212,.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(94,234,212,.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .status {
+    display: inline-block; color: #5eead4;
+    font-family: 'JetBrains Mono', monospace; font-size: 16px;
+    border: 1px solid rgba(94,234,212,.3);
+    padding: 6px 16px; border-radius: 999px;
+    margin-bottom: 28px; width: fit-content;
+  }
+  h1 {
+    font-size: 72px; font-weight: 700; line-height: 1.05;
+    margin: 0 0 20px; letter-spacing: -0.02em;
+  }
+  h1 .grad {
+    background: linear-gradient(135deg, #5eead4, #a78bfa);
+    -webkit-background-clip: text; background-clip: text;
+    color: transparent;
+  }
+  p {
+    font-size: 24px; color: #8b90a0; margin: 0 0 40px;
+    max-width: 700px; line-height: 1.4;
+  }
+  .footer {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 16px; color: #8b90a0;
+    display: flex; gap: 32px;
+  }
+  .footer span { color: #5eead4; }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="status">● Available immediately</div>
+  <h1>Richman Osasuyi<br><span class="grad">AI-Native Full-Stack Builder</span></h1>
+  <p>Production RAG systems, document pipelines, and e-commerce platforms built with terminal-based AI agents.</p>
+  <div class="footer">
+    <span>ragnote.vercel.app</span>
+    <span>tonstores.vercel.app</span>
+    <span>github.com/DtonGamer</span>
+  </div>
+</body>
+</html>
